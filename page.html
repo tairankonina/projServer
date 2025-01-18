@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<body>
+    <h1>api rest</h1>
+    <h2>product</h2>
+    <table>
+        <tr>
+            <th>crud</th>
+            <th>כתובת</th>
+            <th>פרמטרים</th>
+            <th>body</th>
+            <th>מה עושה</th>
+            <th>איזה סוגי שגיאות יכול לחזור</th>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>shop/product</td>
+            <td>---</td>
+            <td>---</td>
+            <td>מחזיר את כל המוצרים</td>
+            <td>cannot get all product</td>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>shop/produc</td>
+            <td>/:id</td>
+            <td>---</td>
+            <td>מחזיר מוצר לפי קוד</td>
+            <td>cannot get product by id</td>
+        </tr>
+        <tr>
+            <td>delete</td>
+            <td>shop/produc</td>
+            <td>/:id</td>
+            <td>---</td>
+            <td>מוחק מוצר לפי קוד</td>
+            <td>cannot delete product</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>shop/produc</td>
+            <td>/:id</td>
+            <td>name/description/date/img/price/details/qty</td>
+            <td>מעדכן שדה מסויים במוצר</td>
+            <td>cannot find by id/cannot update product</td>
+        </tr>
+        <tr>
+            <td>post</td>
+            <td>shop/produc</td>
+            <td>---</td>
+            <td>name/description/date/img/price/details/qty</td>
+            <td>מוסיף מוצר חדש</td>
+            <td>Missing required fields: name and price</td>
+        </tr>
+    </table>
+
+    <h2>user</h2>
+    <table>
+        <tr>
+            <th>crud</th>
+            <th>כתובת</th>
+            <th>פרמטרים</th>
+            <th>body</th>
+            <th>מה עושה</th>
+            <th>איזה סוגי שגיאות יכול לחזור</th>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>shop/user</td>
+            <td>---</td>
+            <td>---</td>
+            <td>מחזיר את כל המשתמשים</td>
+            <td>cannot get all users</td>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>shop/user</td>
+            <td>/:id</td>
+            <td>---</td>
+            <td>מחזיר משתמש לפי קןד</td>
+            <td>cannot get user by id</td>
+        </tr>
+        <tr>
+            <td>delete</td>
+            <td>shop/user</td>
+            <td>/:id</td>
+            <td>---</td>
+            <td>מוחק משתמש לפי קוד</td>
+            <td>cannot delete user</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>shop/user</td>
+            <td>/:id</td>
+            <td>email/name/password/role/date</td>
+            <td>מעדכן שדה מסויים במשתמש</td>
+            <td>cannot find by id/cannot update user</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>shop/user/updatePassword</td>
+            <td>/:id</td>
+            <td>password</td>
+            <td>מעדכן סיסמא</td>
+            <td>cannot find by id/cannot update password</td>
+        </tr>
+        <tr>
+            <td>post</td>
+            <td>shop/user/signup</td>
+            <td>---</td>
+            <td>email/name/password/role/date</td>
+            <td>מוסיף משתמש חדש</td>
+            <td>missing parameters/cannot add</td>
+        </tr>
+        <tr>
+            <td>post</td>
+            <td>shop/user/login</td>
+            <td>---</td>
+            <td>password && name</td>
+            <td>מתחבר לפי שם וסיסמא</td>
+            <td>cannot find user with such details/cannot log in user</td>
+        </tr>
+    </table>
+
+
+    <h2>order</h2>
+    <table>
+        <tr>
+            <th>crud</th>
+            <th>כתובת</th>
+            <th>פרמטרים</th>
+            <th>body</th>
+            <th>מה עושה</th>
+            <th>איזה סוגי שגיאות יכול לחזור</th>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>shop/order</td>
+            <td>---</td>
+            <td>---</td>
+            <td>מחזיר את כל ההזמנות</td>
+            <td>сannot get all orders</td>
+        </tr>
+        <tr>
+            <td>get</td>
+            <td>shop/order</td>
+            <td>/:userId</td>
+            <td>---</td>
+            <td>מחזיר הזמנה לפי קוד</td>
+            <td>cannot get order by id</td>
+        </tr>
+        <tr>
+            <td>delete</td>
+            <td>shop/order</td>
+            <td>/:id</td>
+            <td>---</td>
+            <td>מוחק הזמנה לפי קוד</td>
+            <td>cannot delete order</td>
+        </tr>
+        <tr>
+            <td>put</td>
+            <td>shop/order</td>
+            <td>/:id</td>
+            <td>orderDate/getDate/address/userId/<br>
+                produdt: [productId/name/qty/price]/getOff/sendPrice/finalPrice</td>
+            <td>מעדכן שדה מסויים בהזמנה</td>
+            <td>cannot find order by id/cannot update order</td>
+        </tr>
+        <tr>
+            <td>post</td>
+            <td>shop/order</td>
+            <td>---</td>
+            <td>---</td>
+            <td>מוסיף הזמנה חדשה</td>
+            <td>missing required fields: userId, product, or finalPrice/cannot add order</td>
+        </tr>
+
+    </table>
+    <br>
+
+</body>
+
+</html>
